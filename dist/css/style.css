@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+@media only screen and (max-width: 68.75em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #655A56;
+  background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 2 * 4vw);
+}
+
+.container {
+  max-width: 120rem;
+  margin: 4vw auto;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+  }
+}
+
+.header {
+  padding: 0 4rem;
+  margin-bottom: 2rem;
+  background-color: #F9F5F3;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    padding: 1rem 1rem;
+    border-radius: 0;
+  }
+}
+
+.header__logo {
+  height: 10rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .header__logo {
+    height: 5rem;
+    display: block;
+  }
+}
+
+.results {
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: 0 2rem 6rem 0.5rem rgba(101, 90, 86, 0.2);
+}
+
+@media only screen and (min-width: 769px) {
+  .results {
+    border-radius: 6px;
+  }
+}
+
+.btn {
+  background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+  border-radius: 10rem;
+  border: none;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all .2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn {
+  padding: 1.3rem 3rem;
+  font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .btn {
+    padding: 1rem 1rem;
+    font-size: 1.4rem;
+  }
+}
+
+.btn svg {
+  height: 2.25rem;
+  width: 2.25rem;
+  fill: currentColor;
+}
+
+.loader {
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.loader svg {
+  height: 5.5rem;
+  width: 5.5rem;
+  fill: #F59A83;
+  transform-origin: 44% 50%;
+  animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.search {
+  background-color: #fff;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  transition: all .3s;
+}
+
+.search:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 0.7rem 3rem rgba(101, 90, 86, 0.08);
+}
+
+.search__field {
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+  font-size: 1.7rem;
+  width: 30rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .search__field {
+    font-size: 1.5rem;
+    width: 10rem;
+  }
+}
+
+.search__field:focus {
+  outline: none;
+}
+
+.search__field::placeholder {
+  color: #DAD0CC;
+}
+
+.results__list {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: 4px;
+  width: 100%
+}
+
+.results__item {
+  position: relative;
+  flex: auto;
+  height: 250px;
+  min-width: 150px;
+  margin: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+  .results__item {
+    height: 100%;
+  }
+}
+
+.results__item:last-child {
+  margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  .results__item:nth-child(4n+1) {
+    width: 250px;
+  }
+
+  .results__item:nth-child(4n+1):nth-child(4n+2) {
+    width: 325px;
+  }
+
+  .results__item:nth-child(4n+1):nth-child(4n+3) {
+    width: 180px;
+  }
+
+  .results__item:nth-child(4n+1):nth-child(4n+4) {
+    width: 380px;
+  }
+}
+
+.results__image {
+  overflow: hidden;
+  position: relative;
+  backface-visibility: hidden;
+}
+
+.results__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all .3s;
+}
+
+.results__title {
+  font-size: 1.3rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: .3rem;
+  position: absolute;
+  z-index: 10;
+  bottom: 5px;
+  padding: 2px 4px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, .2);
+}
